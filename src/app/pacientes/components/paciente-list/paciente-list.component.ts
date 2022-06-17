@@ -1,11 +1,13 @@
 import { SelectionModel } from '@angular/cdk/collections';
+import { MatDialog } from '@angular/material/dialog';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { infoGeralModel } from 'src/app/core/models/infoGeralModel';
 import { resultadoModel } from 'src/app/core/models/resultadoModel';
 import { PacienteService } from 'src/app/core/services/paciente/paciente.service';
+import { PacienteDetailComponent } from '../paciente-detail/paciente-detail.component';
 
 @Component({
   selector: 'app-paciente-list',
@@ -16,17 +18,17 @@ export class PacienteListComponent implements OnInit, AfterViewInit {
 
   paciente: resultadoModel[] = [];
 
-  displayedColumns: string[] = ['picture','name', 'gender', 'birth', 'nat'];
+  displayedColumns: string[] = ['picture','name', 'gender', 'birth', 'nat', 'actions'];
   dataSource = new MatTableDataSource<resultadoModel>(this.paciente);
   selection = new SelectionModel<resultadoModel>(true, []);
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort) public sort!: MatSort;
-  @ViewChild(MatTable, { static: true }) table!: MatTable<any>;
 
   constructor(
     private pacienteService: PacienteService,
-  ) {}
+    private dialog: MatDialog
+    ) {}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -50,10 +52,8 @@ export class PacienteListComponent implements OnInit, AfterViewInit {
   getPacientes() {
     this.pacienteService.getTodosPacientes().subscribe((res: infoGeralModel) => {
       this.paciente = res.results;
-      console.log(res.results);
-      console.log(this.paciente);
       this.dataSource = new MatTableDataSource<resultadoModel>(this.paciente);
-      console.log(this.dataSource);
+
       setTimeout(()=>{
         this.dataSource.paginator = this.paginator;
        })
@@ -62,23 +62,22 @@ export class PacienteListComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
     this.getPacientes();
   }
 
-  // redirectToDetails(action: any, obj: { action: any; }) {
-  //   obj.action = action;
+  redirectToDetails(action: any, obj: { action: any; }) {
+    obj.action = action;
 
-  //   const dialogRef = this.dialog.open(ModalDetailsComponent, {
-  //     width: '500px',
-  //     data: obj,
-  //   });
+    const dialogRef = this.dialog.open(PacienteDetailComponent, {
+      width: '500px',
+      data: obj,
+    });
 
-  //     dialogRef.afterClosed().subscribe(result => {
-  //       console.log(`Dialog result: ${result}`);
-  //   });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+    });
 
-  // }
+  }
 
 }
 

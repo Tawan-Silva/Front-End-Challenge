@@ -8,6 +8,9 @@ import { CoreModule } from './core/core.module';
 import { PacientesModule } from './pacientes/pacientes.module';
 import { MaterialModule } from './shared/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule,
     BrowserAnimationsModule,
     CoreModule,
     PacientesModule,
