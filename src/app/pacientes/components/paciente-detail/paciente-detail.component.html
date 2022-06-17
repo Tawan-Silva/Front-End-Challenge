@@ -1,1 +1,95 @@
-<p>paciente-detail works!</p>
+<div class="container">
+  <h1 mat-dialog-title>Informações do paciente</h1>
+
+<div class="header-modal" style="text-align: center;">
+  <img class="example-header-image" src="{{paciente.picture.large}}" alt="paciente logo"
+    style="justify-content: center; width: 200px;">
+</div>
+
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nome completo</mat-label>
+        <input matInput placeholder="" value="{{paciente.name.first}} {{paciente.name.last}}" readonly>
+      </mat-form-field>
+    </td>
+
+    <td style="padding-right: 0px;">
+      <mat-form-field class="example-full-width" appearance="fill" style="width: 100%; align-items: center;">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="" value="{{paciente.email}}" readonly>
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
+
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Sexo</mat-label>
+        <input matInput placeholder="" value="{{paciente.gender}}" readonly>
+      </mat-form-field>
+    </td>
+
+    <td style="padding-right: 0px;">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput placeholder="" value="{{paciente.dob.date | date}}" readonly>
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
+
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput placeholder="" value="{{paciente.phone}}" readonly>
+      </mat-form-field>
+    </td>
+    <td style="padding-right: 0px;">
+      <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+        <mat-label>Nacionalidade</mat-label>
+        <input matInput placeholder="" value="{{paciente.nat}}" readonly>
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
+
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>ID</mat-label>
+        <input matInput placeholder="" value="{{paciente.id.value}}" readonly>
+      </mat-form-field>
+    </td>
+
+    <td style="padding-right: 0px;">
+      <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+        <mat-label>URL</mat-label>
+        <input matInput placeholder="" value="https://randomuser.me/api/{{paciente.id.value}}" readonly>
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
+
+<table class="example-full-width" cellspacing="0" style="width: 100%;">
+  <tr>
+    <mat-form-field style="padding-right: 0px" class="example-full-width" cellspacing="0" appearance="fill">
+      <mat-label>Endereço</mat-label>
+      <input matInput placeholder=""
+        value="{{paciente.location.street.name}} {{paciente.location.city}} {{paciente.location.state}} {{paciente.location.postcode}}"
+        readonly>
+    </mat-form-field>
+  </tr>
+</table>
+
+<div mat-dialog-actions class="btn-close">
+  <button mat-raised-button color="primary" (click)="closeDialog()">Fechar</button>
+</div>
+
+</div>
