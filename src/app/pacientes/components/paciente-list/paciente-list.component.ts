@@ -53,7 +53,7 @@ export class PacienteListComponent implements OnInit, AfterViewInit {
     this.pacienteService.getTodosPacientes().subscribe((res: infoGeralModel) => {
       this.paciente = res.results;
       this.dataSource = new MatTableDataSource<resultadoModel>(this.paciente);
-
+      this.dataSource.sort = this.sort;
       setTimeout(()=>{
         this.dataSource.paginator = this.paginator;
        })
