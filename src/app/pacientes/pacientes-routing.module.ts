@@ -4,8 +4,15 @@ import { PacienteDetailComponent } from './components/paciente-detail/paciente-d
 import { PacienteListComponent } from './components/paciente-list/paciente-list.component';
 
 const routes: Routes = [
-  { path: 'pacientes', component: PacienteListComponent},
-  { path: 'paciente/:id', component: PacienteDetailComponent}
+  {
+    path: 'pacientes',
+   component: PacienteListComponent
+
+  },
+  {
+    path:'paciente/:id',
+    component: PacienteDetailComponent
+  }
 ];
 
 @NgModule({
