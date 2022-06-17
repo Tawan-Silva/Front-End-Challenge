@@ -21,6 +21,7 @@ export class PacienteListComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['picture','name', 'gender', 'birth', 'nat', 'actions'];
   dataSource = new MatTableDataSource<resultadoModel>(this.paciente);
   selection = new SelectionModel<resultadoModel>(true, []);
+  clickedRows = new Set<resultadoModel>(this.paciente);
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort) public sort!: MatSort;
