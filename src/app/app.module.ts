@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
+import { PacientesModule } from './pacientes/pacientes.module';
+import { MaterialModule } from './shared/material.module';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,8 +15,11 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
     BrowserAnimationsModule,
-    CoreModule
+    CoreModule,
+    PacientesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

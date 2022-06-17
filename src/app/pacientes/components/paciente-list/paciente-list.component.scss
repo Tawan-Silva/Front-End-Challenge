@@ -1,0 +1,66 @@
+main {
+  background-color: #464648;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container {
+  background-color: #b7ccfb;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+.search-filter {
+  margin: 0 auto;
+  width: 50%;
+}
+
+table {
+  width: 90%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+  margin: auto;
+  background-color: #d8e3fc;
+}
+
+.example-full-width {
+  width: 20%;
+  padding-left: 5%;
+}
+
+.example-header-image {
+  background-size: cover;
+  margin-bottom: 0px;
+  border-radius:25px;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.mat-form-field {
+  font-size: 16px;
+  width: 100%;
+}
+
+th {
+  width: 25%;
+  color: #000000;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: left;
+}
+
+td {
+  color: #000000;
+  font-weight: 500;
+}
+
+.mat-paginator {
+  width: 90%;
+  background-color: #d8e3fc;
+  font-size: 14px;
+  font-weight: 500;
+  margin: auto;
+}

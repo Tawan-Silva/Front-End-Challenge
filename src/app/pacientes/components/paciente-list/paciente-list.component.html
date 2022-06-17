@@ -1,1 +1,46 @@
-<p>paciente-list works!</p>
+<main>
+  <div class="container">
+    <div class="search-filter">
+      <mat-form-field appearance="outline">
+        <mat-label>Pesquisar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Pesquisar por nome Ex: Tawan" #input>
+      </mat-form-field>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" matSort matSortActivate="created" matSortDisableClear
+      matSortDirection="desc">
+      <ng-container matColumnDef="picture">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element">
+          <img class="example-header-image" src="{{element.picture.thumbnail}}" alt="">
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element">
+          {{element.name.title}} {{element.name.first}} {{element.name.last}} </td>
+      </ng-container>
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="gender"> Gender </th>
+        <td mat-cell *matCellDef="let element "> {{element.gender}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="birth">
+        <th mat-header-cell *matHeaderCellDef> Birth </th>
+        <td mat-cell *matCellDef="let element"> {{element.dob.date | date }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nat">
+        <th mat-header-cell *matHeaderCellDef> Nationality </th>
+        <td mat-cell *matCellDef="let element"> {{element.nat }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator
+    [pageSize]="50" [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons>
+    </mat-paginator>
+  </div>
+</main>

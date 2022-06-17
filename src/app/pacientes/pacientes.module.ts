@@ -6,6 +6,8 @@ import { PacienteListComponent } from './components/paciente-list/paciente-list.
 import { PacienteDetailComponent } from './components/paciente-detail/paciente-detail.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../shared/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +19,11 @@ import { MaterialModule } from '../shared/material.module';
     CommonModule,
     PacientesRoutingModule,
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
+
 export class PacientesModule { }
