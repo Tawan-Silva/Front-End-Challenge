@@ -1,0 +1,19 @@
+.mat-toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(0deg, #9e91e8 0%, #a7c2f8 100%);
+}
+
+.mat-toolbar span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(40, 39, 39);
+}
+
+@media screen and (max-width: 758px) {
+  .mat-toolbar span {
+    font-size: 14px;
+  }
+}

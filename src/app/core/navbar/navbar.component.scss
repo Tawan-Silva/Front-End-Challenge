@@ -1,3 +1,27 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.navbar {
+  width: 100%;
+  overflow: hidden;
+}
+
+.mat-toolbar,
+.mat-toolbar-single-row {
+  overflow: hidden;
+  background: linear-gradient(0deg, #9e91e8 0%, #a7c2f8 100%);
+}
+
+.mat-toolbar img {
+  width: 200px;
+  padding: 10px 0px;
+}
+
+#example-header-image {
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
