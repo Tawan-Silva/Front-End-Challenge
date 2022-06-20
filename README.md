@@ -1,27 +1,20 @@
-# FrontEndChallenge
+#  Pharma Inc System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+## Descrição
+Projeto desenvolvido para a empresa Pharma Inc, com o objetivo de facilitar a gestão e visualização da informação dos seus pacientes de maneira simples onde podem listar, filtrar e expandir os dados disponíveis dos pacientes, via API da empresa.
 
-## Development server
+## Frameworks e Tecnologias
+- Angular CLI version 14.0.2.
+- Angular Material
+- Rxjs
+- Typescript
+- SCSS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Como Instalar e Rodar o projeto
 
-## Code scaffolding
+1. Clone ou baixe o repositório.
+2. Rode um `npm install`.
+3. Rode `ng serve`.
+4. Abrir o navegador e acessar `http://localhost:4200/`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> Front-End Challenge 🏅 By: CoodDash
