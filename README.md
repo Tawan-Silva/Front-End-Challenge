@@ -17,4 +17,4 @@ Projeto desenvolvido para a empresa Pharma Inc, com o objetivo de facilitar a ge
 3. Rode `ng serve`.
 4. Abrir o navegador e acessar `http://localhost:4200/`.
 
-> Front-End Challenge 🏅 By: CoodDash
+> Front-End Challenge 🏅 By: Coodesh
