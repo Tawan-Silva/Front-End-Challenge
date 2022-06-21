@@ -23,7 +23,6 @@ export class PacienteDetailComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<PacienteDetailComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: detalhesPacienteModel) {
-    console.log(data);
     this.paciente = data
     this.local_data = {...data};
     this.action = this.local_data.action;

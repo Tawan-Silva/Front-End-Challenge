@@ -18,7 +18,7 @@ export class PacienteListComponent implements OnInit, AfterViewInit {
 
   paciente: resultadoModel[] = [];
 
-  displayedColumns: string[] = ['picture','name', 'gender', 'birth', 'nat', 'actions'];
+  displayedColumns: string[] = ['name', 'gender', 'birth', 'naturalness', 'actions'];
   dataSource = new MatTableDataSource<resultadoModel>(this.paciente);
   selection = new SelectionModel<resultadoModel>(true, []);
   clickedRows = new Set<resultadoModel>(this.paciente);
@@ -57,10 +57,10 @@ export class PacienteListComponent implements OnInit, AfterViewInit {
       this.dataSource.sort = this.sort;
       setTimeout(()=>{
         this.dataSource.paginator = this.paginator;
-       })
+      })
     })
   }
-
+  
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
     this.getPacientes();
@@ -74,10 +74,7 @@ export class PacienteListComponent implements OnInit, AfterViewInit {
       data: obj,
     });
 
-      dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog result: ${result}`);
-    });
-
+      dialogRef.afterClosed().subscribe();
   }
 
 }

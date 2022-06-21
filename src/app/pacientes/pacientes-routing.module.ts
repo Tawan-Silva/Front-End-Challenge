@@ -5,9 +5,8 @@ import { PacienteListComponent } from './components/paciente-list/paciente-list.
 
 const routes: Routes = [
   {
-    path: 'pacientes',
+    path: '',
    component: PacienteListComponent
-
   },
   {
     path:'paciente/:id',

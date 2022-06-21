@@ -34,7 +34,7 @@ table {
 .example-header-image {
   background-size: cover;
   margin-bottom: 0px;
-  border-radius:25px;
+  border-radius: 25px;
   align-items: center;
   margin-top: 7px;
 }
@@ -45,7 +45,7 @@ table {
 }
 
 th {
-  width: 18%;
+  width: 10%;
   color: #000000;
   font-weight: 600;
   font-size: 14px;
@@ -55,6 +55,7 @@ td {
   color: #000000;
   font-weight: 500;
 }
+
 
 .mat-row .mat-cell {
   border-bottom: 1px solid transparent;
